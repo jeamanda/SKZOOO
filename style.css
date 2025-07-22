@@ -1,0 +1,188 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container-header, .container-footer {
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+header {
+    background: #d9aa45;
+    color: #fff;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 50px; 
+    margin-right: 10px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+    text-align: right;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.7rem 1rem;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Dropdown menu */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    position: relative;
+    display: inline-block;
+}
+
+nav ul li ul.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+}
+
+nav ul li:hover ul.dropdown-content {
+    display: block;
+}
+
+nav ul li ul.dropdown-content li {
+    display: block;
+}
+
+nav ul li ul.dropdown-content li a {
+    color: #000;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+nav ul li ul.dropdown-content li a:hover {
+    background-color: #f1c40f;
+}
+
+
+/* Main Content */
+main {
+    padding: 20px;
+    min-height: 500px; /* Contoh min-height */
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+#hero {
+    background: #d9aa45;
+    color: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+#hero h2 {
+    margin-top: 0;
+    font-size: 2.5rem;
+}
+
+#hero p {
+    font-size: 1.2rem;
+}
+
+.btn-logout {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #f1c40f 0%, #f1c40f 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn-logout:hover {
+            transform: translateY(-2px);
+        }
+
+.profile-section {
+    background-color: #d9aa45;
+    padding: 40px 30px;
+    color: white;
+    border-radius: 8px;
+    max-width: 900px;
+    margin: auto;
+    text-align: left;
+}
+
+.profile-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.profile-section h3 {
+    margin-top: 30px;
+    font-size: 1.5rem;
+}
+
+.profile-section p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.profile-section ul {
+    padding-left: 20px;
+    line-height: 1.8;
+}
+
+
+/* Footer */
+footer {
+    background: #d9aa45;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 20px;
+}

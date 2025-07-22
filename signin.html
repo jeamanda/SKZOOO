@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - PT. SKZOO World</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #E6B800 0%, #D4A017 100%);
+            min-height: 100vh;
+        }
+        
+        .container-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #E6B800 0%, #D4A017 100%);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo img {
+            width: 50px;
+            height: 50px;
+        }
+        
+        .logo h1 {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        nav a:hover, nav a.nav-link {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 200px);
+            padding: 2rem;
+        }
+        
+        .signin-container {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        
+        .signin-container h2 {
+            color: #333;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+            font-weight: bold;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #E6B800;
+            box-shadow: 0 0 0 3px rgba(230, 184, 0, 0.1);
+        }
+        
+        .btn-signin {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #E6B800 0%, #D4A017 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn-signin:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(230, 184, 0, 0.3);
+        }
+        
+        .message {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            animation: fadeIn 0.5s ease;
+            display: none;
+        }
+        
+        .success-message {
+            background: #4CAF50;
+            color: white;
+        }
+        
+        .error-message {
+            background: #f44336;
+            color: white;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .container-footer {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            margin-top: auto;
+        }
+        
+        .demo-accounts {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+        
+        .demo-accounts h4 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .demo-accounts p {
+            color: #666;
+            margin: 0.2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container-header">
+            <div class="logo">
+                <img src="logo.PNG" alt="Logo Organisasi"> 
+                <h1>PT. SKZOO World</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="profil.html">Profile</a></li>
+                    <li><a href="visimisi.html">Visi Misi</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="signin.html" class="nav-link">Sign In</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                </ul>              
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="signin-container">
+            <h2>Masuk Akun</h2>
+            <form id="signinForm">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Sandi:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <button type="submit" class="btn-signin">Masuk</button>
+                
+                <div id="successMessage" class="message success-message"></div>
+                <div id="errorMessage" class="message error-message"></div>
+            </form>
+            
+            <!-- Demo Accounts Info -->
+            <div class="demo-accounts">
+                <h4>Akun Demo:</h4>
+                <p><strong>Admin:</strong> admin@skzoo.com / admin123</p>
+                <p><strong>User:</strong> user@skzoo.com / user123</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container-footer">
+            <p>Design by : Zhea Amanda Vitaloka</p>
+        </div>
+    </footer>
+
+    <script>
+        // Database Manager untuk localStorage
+        class UserDatabase {
+            constructor() {
+                this.dbName = 'skzoo_users';
+                this.currentUserKey = 'skzoo_current_user';
+                this.initializeDB();
+            }
+
+            initializeDB() {
+                if (!localStorage.getItem(this.dbName)) {
+                    const defaultUsers = [
+                        {
+                            id: 1,
+                            email: 'admin@skzoo.com',
+                            password: 'admin123',
+                            name: 'Administrator',
+                            role: 'admin',
+                            createdAt: new Date().toISOString()
+                        },
+                        {
+                            id: 2,
+                            email: 'user@skzoo.com', 
+                            password: 'user123',
+                            name: 'User Demo',
+                            role: 'user',
+                            createdAt: new Date().toISOString()
+                        }
+                    ];
+                    localStorage.setItem(this.dbName, JSON.stringify(defaultUsers));
+                }
+            }
+
+            getAllUsers() {
+                const users = localStorage.getItem(this.dbName);
+                return users ? JSON.parse(users) : [];
+            }
+
+            findUserByEmail(email) {
+                const users = this.getAllUsers();
+                return users.find(user => user.email === email);
+            }
+
+            loginUser(email, password) {
+                const user = this.findUserByEmail(email);
+                
+                if (!user) {
+                    return { success: false, message: 'Email tidak terdaftar!' };
+                }
+
+                if (user.password !== password) {
+                    return { success: false, message: 'Password salah!' };
+                }
+
+                const sessionData = {
+                    id: user.id,
+                    email: user.email,
+                    name: user.name,
+                    role: user.role,
+                    loginAt: new Date().toISOString()
+                };
+                
+                localStorage.setItem(this.currentUserKey, JSON.stringify(sessionData));
+                
+                return { success: true, message: 'Login berhasil!', user: sessionData };
+            }
+
+            getCurrentUser() {
+                const currentUser = localStorage.getItem(this.currentUserKey);
+                return currentUser ? JSON.parse(currentUser) : null;
+            }
+
+            logoutUser() {
+                localStorage.removeItem(this.currentUserKey);
+                return { success: true, message: 'Logout berhasil!' };
+            }
+        }
+
+        // Inisialisasi database
+        const userDB = new UserDatabase();
+
+        // Form handler
+        document.getElementById('signinForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const successMsg = document.getElementById('successMessage');
+            const errorMsg = document.getElementById('errorMessage');
+            
+            // Reset pesan sebelumnya
+            successMsg.style.display = 'none';
+            errorMsg.style.display = 'none';
+            
+            if (email && password) {
+                const result = userDB.loginUser(email, password);
+                
+                if (result.success) {
+                    successMsg.textContent = `✅ ${result.message} Selamat datang, ${result.user.name}!`;
+                    successMsg.style.display = 'block';
+                    
+                    // Redirect setelah 2 detik (opsional)
+                    setTimeout(() => {
+                        // window.location.href = 'dashboard.html';
+                        console.log('Redirect ke dashboard');
+                    }, 2000);
+                } else {
+                    errorMsg.textContent = `❌ ${result.message}`;
+                    errorMsg.style.display = 'block';
+                }
+            }
+        });
+
+        // Cek apakah user sudah login saat halaman dimuat
+        window.addEventListener('load', function() {
+            const currentUser = userDB.getCurrentUser();
+            if (currentUser) {
+                const successMsg = document.getElementById('successMessage');
+                successMsg.textContent = `👋 Selamat datang kembali, ${currentUser.name}!`;
+                successMsg.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
